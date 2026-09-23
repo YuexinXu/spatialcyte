@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use spatialcyte in your work, please cite it as below."
+type: software
+title: "spatialcyte: multiplexed IHC images to spatial single-cell objects"
+abstract: >-
+  Turns a multiplexed immunohistochemistry image and a one-file panel
+  configuration into a spatial single-cell AnnData object with per-marker
+  whole-cell, nuclear, membrane, cytoplasm and extracellular-ring intensities,
+  morphology, distances to segmented tissue regions and a spatial neighbour
+  graph.
+authors:
+  - family-names: Xu
+    given-names: Yuexin
+    affiliation: Fred Hutchinson Cancer Center
+version: 0.1.0
+date-released: "2026-09-23"
+license: MIT
+repository-code: "https://github.com/YuexinXu/spatialcyte"
+keywords:
+  - multiplexed immunohistochemistry
+  - spatial biology
+  - single-cell
+  - AnnData
+  - tumor microenvironment
+# doi: 10.5281/zenodo.XXXXXXX   # filled in after the first Zenodo-archived release

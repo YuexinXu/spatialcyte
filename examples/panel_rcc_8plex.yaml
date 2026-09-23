@@ -1,0 +1,37 @@
+# Example panel — 8-plex renal-cell-carcinoma mIHC (Vectra Polaris / HALO).
+# Marker layout only; no sample identifiers or dates.
+# Channel 8 (autofluorescence) is excluded from analysis.
+pixel_size_um: 0.5
+channels:
+  - { index: 0, marker: DAPI,  role: nuclear }
+  - { index: 1, marker: CD31,  role: region, region: vessel }
+  - { index: 2, marker: CD8,   role: lineage }
+  - { index: 3, marker: CD68,  role: lineage }
+  - { index: 4, marker: CD3,   role: lineage }
+  - { index: 5, marker: STAB1, role: functional }
+  - { index: 6, marker: FOXP3, role: lineage }
+  - { index: 7, marker: CD4,   role: lineage }
+  - { index: 8, marker: AF,    role: exclude }
+
+segmentation:
+  cell:
+    backend: cellpose     # or: threshold (dependency-free default)
+    model: cpsam          # Cellpose pretrained model name or path
+    diameter_um: 10       # expected cell diameter; converted to pixels via pixel_size_um
+  # Every `role: region` channel is segmented automatically
+  # (Otsu threshold -> morphological closing -> size filter); no settings needed.
+
+quantify:
+  compartments: [whole, nuclear, membrane, cytoplasm, extracellular]
+  arcsinh_cofactor: 5
+  spatial_graph: { k: 15 }   # k-nearest-neighbour graph on centroid coordinates (um)
+
+phenotype:
+  positivity: { method: gmm }   # or: otsu
+  gates: # hierarchical, first match wins
+    - { label: Treg, all: [CD3, CD4, FOXP3] }
+    - { label: CD8 T cell, all: [CD3, CD8] }
+    - { label: CD4 T cell, all: [CD3, CD4] }
+    - { label: TAM, all: [CD68] }
+    - { label: Endothelial, all: [CD31] }
+    - { label: Other }

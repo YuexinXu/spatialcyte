@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Data must NEVER enter this repo (panel-agnostic tool; no PHI, no images)
+*.tif
+*.tiff
+*.qptiff
+*.svs
+*.h5ad
+*.h5
+*.zarr/
+*.npy
+*.npz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+~$*
+
+# Manuscript / report drafts — kept local, never pushed (may reference unpublished results)
+manuscript/
