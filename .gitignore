@@ -28,3 +28,6 @@ Thumbs.db
 
 # Manuscript / report drafts — kept local, never pushed (may reference unpublished results)
 manuscript/
+
+# Local assistant config — never committed
+.claude/
