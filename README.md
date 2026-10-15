@@ -370,11 +370,16 @@ built-in tiling for whole slides; further spatial statistics.
 
 ## Citation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23402931.svg)](https://doi.org/10.5281/zenodo.23402931)
+
 If you use spatialcyte, please cite the software (metadata in
-[`CITATION.cff`](CITATION.cff); a Zenodo DOI will be added at the first archived release):
+[`CITATION.cff`](CITATION.cff)):
 
 > Xu Y. spatialcyte: multiplexed IHC images to spatial single-cell objects. Version 0.1.0.
-> 2026. https://github.com/YuexinXu/spatialcyte
+> Zenodo; 2026. https://doi.org/10.5281/zenodo.23402932
+
+The badge carries the concept DOI, which always resolves to the latest version; the
+version DOI above identifies v0.1.0 specifically.
 
 ## License
 
